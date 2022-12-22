@@ -1,5 +1,5 @@
 {
-  "name": "w3link-csp-report-server",
-  "region": "us-east-1",
+  "name": "w3link-csp-report-api",
+  "region": "us-west-2",
   "main": "stacks/index.js"
 }

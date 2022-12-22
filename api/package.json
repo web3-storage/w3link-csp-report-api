@@ -1,0 +1,16 @@
+{
+  "name": "@w3link-csp-report-api/api",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "ava --node-arguments='--experimental-fetch' --verbose --timeout=60s '**/*.test.js'"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1280.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.109",
+    "@types/node": "^18.11.0",
+    "ava": "^5.1.0"
+  }
+}
