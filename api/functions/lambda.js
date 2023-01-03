@@ -12,7 +12,9 @@ export const handler = async (event) => {
     effectiveDirective: e.body?.effectiveDirective
   }))
 
-  console.log(events)
+  for (const event of events) {
+    console.log(event)
+  }
 
   return {
     statusCode: 200,
