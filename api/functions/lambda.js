@@ -4,22 +4,26 @@
  * @param {import('aws-lambda').APIGatewayProxyEventV2} event 
  */
 export const handler = async (event) => {
-  // @ts-ignore
-  const events = JSON.parse(event.body || '[]').map((e) => ({
-    type: e.type,
-    blockedURL: e.body?.blockedURL,
-    documentURL: e.body?.documentURL,
-    effectiveDirective: e.body?.effectiveDirective
-  }))
+  try {
+    // @ts-ignore
+    const events = JSON.parse(event.body || '[]').map((e) => ({
+      type: e.type,
+      blockedURL: e.body?.blockedURL,
+      documentURL: e.body?.documentURL,
+      effectiveDirective: e.body?.effectiveDirective
+    }))
 
-  for (const event of events) {
-    console.log(event)
+    for (const event of events) {
+      console.log(event)
+    }
+  } catch {
+    console.log(`errored with: ${event.body}`)
   }
 
   return {
     statusCode: 200,
     headers: { 'Content-Type': 'text/plain' },
-    body: `Hello, World! Your request was received at ${event.requestContext.time}.`,
+    body: `Your request was handled at ${event.requestContext.time}.`,
   }
 }
 
