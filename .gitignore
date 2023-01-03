@@ -1,5 +1,6 @@
 # dependencies
 node_modules
+dist
 
 # sst
 .sst
@@ -7,6 +8,7 @@ node_modules
 
 # misc
 .DS_Store
+.vscode
 
 # local env files
 .env*.local
